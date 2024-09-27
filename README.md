@@ -4,7 +4,7 @@
 
 #### 🔗 Website Live URL Two: [Alternative Product Information System](https://alternative-product-info-b80e6.firebaseapp.com/)
 
-## 🧰 Using Package / Tools Front-End:
+## 🧰 Using Package / Tools Front-End
 
 - React
 - React-Router
@@ -19,7 +19,7 @@
 - Prop-Types
 - Tailwind CSS
 
-## 🧰 Using Package / Tools Back-End:
+## 🧰 Using Package / Tools Back-End
 
 - Express
 - Cors
