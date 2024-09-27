@@ -1,4 +1,4 @@
-# Alternative Product Information System MERN
+# 📛 Alternative Product Information System MERN
 
 #### 🔗 Website Live URL One: [Alternative Product Information System](https://alternative-product-info-b80e6.web.app/)
 
