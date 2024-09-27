@@ -1,0 +1,30 @@
+.heading-decoration {
+  position: relative;
+}
+.heading-decoration .heading-inner {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+}
+
+.heading-decoration .heading-inner::before {
+  right: 100%;
+  margin: 5px 0 0 11px;
+  width: 100vw;
+  height: 1px;
+  background: #c2d3f2;
+  content: "";
+  position: absolute;
+  top: 0.5em;
+}
+
+.heading-decoration .heading-inner::after {
+  left: -5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #4a00ff;
+  content: "";
+  position: absolute;
+  top: 0.5em;
+}

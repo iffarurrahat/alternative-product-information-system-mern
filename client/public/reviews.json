@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "1",
+    "image": "https://images.pexels.com/photos/735552/pexels-photo-735552.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "review": "This product information system is incredibly user-friendly and has streamlined our operations efficiently.",
+    "name": "John Doe",
+    "date": "19/06/2024"
+  },
+  {
+    "_id": "2",
+    "image": "https://images.pexels.com/photos/8727571/pexels-photo-8727571.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "review": "A reliable platform with a seamless interface. It has greatly improved our product management processes.",
+    "name": "Jane Smith",
+    "date": "10/07/2024"
+  },
+  {
+    "_id": "3",
+    "image": "https://images.pexels.com/photos/428361/pexels-photo-428361.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "review": "We’ve seen significant improvement in our workflow since using this system. Highly recommended!",
+    "name": "Michael Johnson",
+    "date": "29/06/2024"
+  },
+  {
+    "_id": "4",
+    "image": "https://images.pexels.com/photos/10273454/pexels-photo-10273454.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "review": "The system offers extensive features that cater to our needs, making our tasks more manageable.",
+    "name": "Emily Davis",
+    "date": "09/05/2024"
+  },
+  {
+    "_id": "5",
+    "image": "https://images.pexels.com/photos/1310518/pexels-photo-1310518.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "review": "Great tool for managing product data effectively. The support team is also very responsive and helpful. Great tool for managing product data effectively.",
+    "name": "David Brown",
+    "date": "30/06/2024"
+  }
+]

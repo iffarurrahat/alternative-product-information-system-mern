@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.pexels.com/photos/295826/pexels-photo-295826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "title": "Revolutionize Product Data",
+    "details": "Embrace APIS for seamless integration, data accuracy, and efficiency in product information management."
+  },
+  {
+    "id": 2,
+    "image": "https://images.pexels.com/photos/18126873/pexels-photo-18126873/free-photo-of-a-misty-glowing-rural-field-with-a-golden-sunrise-and-windmills-in-the-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "title": "Efficiency Redefined",
+    "details": "Experience unmatched efficiency with APIS. Reduce errors and boost productivity effortlessly."
+  },
+  {
+    "id": 3,
+    "image": "https://images.pexels.com/photos/2383122/pexels-photo-2383122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "title": "Innovative Data Solutions",
+    "details": "Unlock APIS potential. Ensure data accuracy and improve decision-making."
+  },
+  {
+    "id": 4,
+    "image": "https://images.pexels.com/photos/4124053/pexels-photo-4124053.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "title": "Future-Ready Management",
+    "details": "Prepare with APIS. Achieve seamless integration and high data accuracy for operational excellence."
+  }
+]
