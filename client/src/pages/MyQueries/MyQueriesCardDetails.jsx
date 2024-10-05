@@ -1,5 +1,5 @@
 import { MdDateRange } from "react-icons/md";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Container from "../../components/ui/Container";
 import toast from "react-hot-toast";
@@ -136,12 +136,13 @@ const MyQueriesCardDetails = () => {
               {/* user profile */}
               <div className="flex items-center mt-8 -mx-2">
                 <img
-                  className="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700"
+                  className="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-700"
                   src={
                     post?.photo ||
                     "https://i.ibb.co/FHzbGp2/default-profile.png"
                   }
-                  alt=""
+                  alt="photo"
+                  referrerPolicy="no-referrer"
                 />
 
                 <div className="mx-2">

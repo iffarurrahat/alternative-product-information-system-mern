@@ -7,6 +7,7 @@ import { RiErrorWarningFill } from "react-icons/ri";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import axios from "axios";
 import Spinner from "../../components/ui/Spinner";
+import { imageUpload } from "../../components/ui";
 
 const Register = () => {
   const { createUser, updatedUserProfile, user, setUser, loading, setLoading } =
@@ -30,9 +31,12 @@ const Register = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+    const image = form.image.files[0];
+
+    // console.log(name, email, password);
+    // console.log(image_url);
 
     // verify some authentication
     if (password.length < 6) {
@@ -42,15 +46,25 @@ const Register = () => {
     } else if (!/[a-z]/.test(password)) {
       return setRegisterError("Include at least one lowercase character");
     }
-    //reset error
+    // reset error
     setRegisterError("");
 
     try {
-      const result = await createUser(email, password);
+      setLoading(true);
 
-      await updatedUserProfile(name, photo);
-      //Optimistic UI Update
-      setUser({ ...result?.user, photoURL: photo, displayName: name });
+      //1. Upload image and get image url
+      const image_url = await imageUpload(image);
+      // console.log("image_url:", image_url);
+
+      //2. User Registration
+      const result = await createUser(email, password);
+      // console.log(result);
+
+      //3. Save username and photo in firebase
+      await updatedUserProfile(name, image_url);
+
+      // //Optimistic UI Update
+      setUser({ ...result?.user, photoURL: image_url, displayName: name });
 
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/jwt`,
@@ -140,15 +154,18 @@ const Register = () => {
                   {showPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
                 </span>
               </div>
+
               <div>
-                <label htmlFor="email" className="block mb-2 text-sm">
-                  Photo URL
+                <label htmlFor="image" className="block mb-1 text-sm">
+                  Upload Image
                 </label>
                 <input
-                  type="text"
-                  name="photo"
-                  placeholder="Photo URL"
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                  required
+                  type="file"
+                  id="image"
+                  name="image"
+                  accept="image/*"
+                  className="flex items-center px-3 py-1.5 mx-auto bg-white border-2 border-dashed rounded-lg cursor-pointer  file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:cursor-pointer w-full"
                 />
               </div>
             </div>
@@ -179,3 +196,19 @@ const Register = () => {
 };
 
 export default Register;
+
+/*
+
+              <div>
+                <label htmlFor="email" className="block mb-2 text-sm">
+                  Photo URL
+                </label>
+                <input
+                  type="text"
+                  name="photo"
+                  placeholder="Photo URL"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                />
+              </div>
+
+*/

@@ -4,6 +4,14 @@
 
 #### 🔗 Website Live URL Two: [Alternative Product Information System](https://alternative-product-info-b80e6.firebaseapp.com/)
 
+## Task Submission (Wave 2)
+
+```bash
+11 No Assignment Requirement এর মধ্যে কোথাও ছিল না যে Upload Image functionality system এর কথা, imgbb - তে ছবি আপলোড করে ওইখান থেকে direact link  এনে input field  এর মধ্যে বসাতে হতো
+ - আমি আমার Register Page Upload Image functionality implement করেছি
+
+```
+
 ## 🧰 Using Package / Tools Front-End
 
 - React
