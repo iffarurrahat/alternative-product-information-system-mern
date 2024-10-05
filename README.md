@@ -12,7 +12,8 @@ imgbb তে ছবি আপলোড করে ওইখান থেকে di
 
  - আমি আমার Register Page Upload Image functionality implement করেছি
  - পাশাপাশি Add A Recommendation ওইখানেও Upload Image functionality implement করেছি
- - এবং Added Your queries ও Upload Image functionality implement করেছি
+ - এবং Added Your queries Page ও Upload Image functionality implement করেছি
+ - এবং Updated Your queries form ওই জায়গাতেও Upload Image functionality implement করেছি
 ```
 
 ## 🧰 Using Package / Tools Front-End

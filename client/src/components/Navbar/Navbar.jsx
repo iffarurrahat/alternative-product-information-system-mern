@@ -184,7 +184,7 @@ const Navbar = () => {
           <div className="navbar lg:flex justify-between px-0 ">
             <div>
               <Link to="/">
-                <img src={logoImg} alt="logo" className="h-10 md:h-14" />
+                <img src={logoImg} alt="logo" className="h-10 md:h-12 " />
               </Link>
             </div>
             <div>

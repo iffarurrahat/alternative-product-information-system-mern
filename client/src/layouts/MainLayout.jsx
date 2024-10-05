@@ -4,9 +4,12 @@ import Footer from "../components/Footer/Footer";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <Outlet />
+      {/* Main content area with min-height to prevent Footer from attaching to Navbar */}
+      <div className="flex-grow">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

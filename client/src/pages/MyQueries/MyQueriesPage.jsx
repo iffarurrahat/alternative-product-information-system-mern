@@ -3,24 +3,34 @@ import Container from "../../components/ui/Container";
 import EmptyState from "../../components/EmptyState/EmptyState";
 import ImgQueries from "../../assets/addEmptyImg.jpg";
 import useAuth from "../../hooks/useAuth";
-import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { imageUpload } from "../../components/ui";
-import { ImSpinner2 } from "react-icons/im";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useMutation } from "@tanstack/react-query";
 
 const MyQueriesPage = () => {
   const { user, loading } = useAuth();
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
+
+  const { mutateAsync } = useMutation({
+    mutationFn: async (addedQuery) => {
+      const toastId = toast.loading("Loading...");
+      const { data } = await axiosPublic.post("/queries", addedQuery);
+      toast.dismiss(toastId);
+      return data;
+    },
+    onSuccess: () => {
+      toast.success("Query added successfully!");
+    },
+  });
 
   const handleAddQueries = async (e) => {
-    const toastId = toast.loading("Loading...");
-
     e.preventDefault();
     const form = e.target;
     const product_name = form.product_name.value;
     const product_brand = form.product_brand.value;
-    // const image_URL = form.image_URL.value;
     const image_URL = form.image.files[0];
     const query_title = form.query_title.value;
     const boycotting_reason_details = form.boycotting_reason_details.value;
@@ -28,7 +38,6 @@ const MyQueriesPage = () => {
 
     //Upload image and get image url
     const image_url = await imageUpload(image_URL);
-    console.log(image_url);
 
     const addedQuery = {
       product_name,
@@ -46,11 +55,7 @@ const MyQueriesPage = () => {
     };
 
     try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/queries`,
-        addedQuery
-      );
-      toast.success("Query added successfully!", { id: toastId });
+      await mutateAsync(addedQuery);
       navigate("/my-queries");
     } catch (err) {
       toast.error(err.message);
@@ -81,7 +86,7 @@ const MyQueriesPage = () => {
                       type="text"
                       name="product_name"
                       required
-                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                     />
                   </div>
                   <div>
@@ -90,7 +95,7 @@ const MyQueriesPage = () => {
                       type="text"
                       name="product_brand"
                       required
-                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                     />
                   </div>
 
@@ -101,7 +106,7 @@ const MyQueriesPage = () => {
                       type="text"
                       name="query_title"
                       required
-                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border  rounded-md border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                     />
                   </div>
                   <div>
@@ -117,7 +122,7 @@ const MyQueriesPage = () => {
                       id="image"
                       name="image"
                       accept="image/*"
-                      className="flex items-center px-3 py-1.5 mx-auto bg-white border-2 border-dashed rounded-lg cursor-pointer  file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:cursor-pointer w-full mt-2"
+                      className="flex items-center px-3 py-1.5 mx-auto bg-white border-2 border-dashed rounded-lg cursor-pointer file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:cursor-pointer w-full mt-2"
                     />
                   </div>
                 </div>
@@ -132,7 +137,7 @@ const MyQueriesPage = () => {
                     required
                     cols="30"
                     rows="5"
-                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                   ></textarea>
                 </div>
 
@@ -140,13 +145,9 @@ const MyQueriesPage = () => {
                   <button
                     disabled={loading}
                     type="submit"
-                    className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+                    className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 cursor-pointer"
                   >
-                    {loading ? (
-                      <ImSpinner2 className="animate-spin m-auto" />
-                    ) : (
-                      "Add Query"
-                    )}
+                    Add Query
                   </button>
                 </div>
               </form>
