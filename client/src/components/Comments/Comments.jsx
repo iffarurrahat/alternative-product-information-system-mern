@@ -11,7 +11,7 @@ const Comments = ({ comment }) => {
     recommended_product_name,
     recommended_product_image,
     recommendation_reason,
-  } = comment;
+  } = comment || {};
 
   return (
     <div>
@@ -22,6 +22,7 @@ const Comments = ({ comment }) => {
             className="flex-shrink-0 object-cover w-8 h-8 mx-1 rounded-full"
             src={recommender_photo}
             alt={recommender_name}
+            referrerPolicy="no-referrer"
           />
           <div className="mx-1">
             <h1 className="text-xs font-semibold text-gray-700">
@@ -42,9 +43,9 @@ const Comments = ({ comment }) => {
       <div className="bg-gray-100/50 p-3 rounded-b-md">
         <div className="lg:flex lg:items-center">
           <img
-            className="object-cover w-full md:w-1/5 h-40 md:h-full rounded-xl"
+            className="object-cover w-full md:w-1/5 h-40 md:h-full rounded-xl "
             src={recommended_product_image}
-            alt=""
+            alt={recommended_product_name}
           />
 
           <div className="mt-3 lg:w-3/4 lg:mt-0 lg:mx-6 ">

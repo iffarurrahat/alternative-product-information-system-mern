@@ -196,19 +196,3 @@ const Register = () => {
 };
 
 export default Register;
-
-/*
-
-              <div>
-                <label htmlFor="email" className="block mb-2 text-sm">
-                  Photo URL
-                </label>
-                <input
-                  type="text"
-                  name="photo"
-                  placeholder="Photo URL"
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
-                />
-              </div>
-
-*/

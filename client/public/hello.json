@@ -1,0 +1,60 @@
+[
+  {
+    "_id": "66a7d454c5ea5e02dda1ea3b",
+    "queryId": "66a4093b264edfe1edb4a1cd",
+    "recommendation_title": "Avoid Green Life's Eco-friendly Water Bottle",
+    "recommended_product_name": "Eco-friendly Water Bottle",
+    "recommended_product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzXWP1M7L2LQQat1xAqIXox2DGioyJ8RXvnQ&s",
+    "recommendation_reason": "The brand has been criticized for not maintaining its eco-friendly claims. Several reports indicate that their manufacturing process is not as sustainable as advertised, leading to significant environmental harm. Furthermore, the materials used in their products have been found to contain harmful chemicals, contradicting their marketing claims. Consumers are urged to reconsider their purchase to support genuinely eco-friendly brands.",
+    "recommender_email": "macksoto@gmail.com",
+    "recommender_name": "Mack Soto",
+    "recommender_photo": "https://i.ibb.co/9c1hHNb/shrabon-dev.jpg",
+    "recommender_time": "2024-07-29T17:41:40.207Z",
+    "query_title": "Sustainability Concerns",
+    "product_name": "Eco-friendly Water Bottle",
+    "post": {
+      "email": "johndoe@gmail.com",
+      "name": "John Doe",
+      "photo": "https://i.ibb.co/m6NRhbL/extraction.jpg"
+    }
+  },
+  {
+    "_id": "66a7d51dc5ea5e02dda1ea3c",
+    "queryId": "66a4093b264edfe1edb4a1ce",
+    "recommendation_title": "Avoid Pure Wear Due to Labor Rights Violations",
+    "recommended_product_name": " Pure Wear Clothing",
+    "recommended_product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Mce54RiOXOh92tOxW5MeX5qXWbuHBaQ_eQ&s",
+    "recommendation_reason": "Investigations have revealed that the brand's manufacturing facilities employ child labor and subject workers to poor working conditions. Despite being marketed as ethically produced, the brand has failed to ensure fair wages and safe working environments for its workers. This exploitation is a significant reason to boycott the brand and support more transparent and ethical clothing companies.",
+    "recommender_email": "macksoto@gmail.com",
+    "recommender_name": "Mack Soto",
+    "recommender_photo": "https://i.ibb.co/9c1hHNb/shrabon-dev.jpg",
+    "recommender_time": "2024-07-29T17:45:01.089Z",
+    "query_title": "Labor Rights Violations",
+    "product_name": "Organic Cotton T-Shirt",
+    "post": {
+      "email": "johndoe@gmail.com",
+      "name": "John Doe",
+      "photo": "https://i.ibb.co/m6NRhbL/extraction.jpg"
+    }
+  },
+
+  {
+    "_id": "670130dd00933408b8bf4f54",
+    "queryId": "66a4093b264edfe1edb4a1d1",
+    "recommendation_title": "Vegan Delight's Plant-based Milk Misrepresents Cruelty-free Claims",
+    "recommended_product_name": "Plant-based Milk",
+    "recommended_product_image": {},
+    "recommendation_reason": "Although the brand promotes itself as cruelty-free, investigations have shown otherwise. The farms supplying the plant-based milk have been found to use harmful pesticides and fertilizers, causing environmental damage and health risks to farmworkers. These unethical practices contradict the brand's cruelty-free image and mislead consumers. Boycotting this brand supports truly ethical farming practices.",
+    "recommender_email": "johnny.depp.young@gmail.com",
+    "recommender_name": "Johnny Deep",
+    "recommender_photo": "https://i.ibb.co.com/fr0sfgG/johnny-depp.jpg",
+    "recommender_time": "2024-10-05T12:28:12.971Z",
+    "query_title": "Ethical Farming Practices",
+    "product_name": "Plant-based Milk",
+    "post": {
+      "email": "johndoe@gmail.com",
+      "name": "John Doe",
+      "photo": "https://i.ibb.co/m6NRhbL/extraction.jpg"
+    }
+  }
+]

@@ -7,9 +7,10 @@
 ## Task Submission (Wave 2)
 
 ```bash
-11 No Assignment Requirement এর মধ্যে কোথাও ছিল না যে Upload Image functionality system এর কথা, imgbb - তে ছবি আপলোড করে ওইখান থেকে direact link  এনে input field  এর মধ্যে বসাতে হতো
+11 No Assignment Requirement এর মধ্যে কোথাও ছিল না যে Upload Image functionality system এর কথা,
+imgbb তে ছবি আপলোড করে ওইখান থেকে direact link  এনে input field  এর মধ্যে বসাতে হতো
  - আমি আমার Register Page Upload Image functionality implement করেছি
-
+ - পাশাপাশি Add A Recommendation ওইখানেও Upload Image functionality implement করেছি
 ```
 
 ## 🧰 Using Package / Tools Front-End

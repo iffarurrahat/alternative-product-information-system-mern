@@ -9,10 +9,11 @@ import Comments from "../../components/Comments/Comments";
 import NoDataFound from "../../components/EmptyState/NoDataFound";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import Spinner from "../../components/ui/Spinner";
+import { imageUpload } from "../../components/ui";
 
 const MyQueriesCardDetails = () => {
   const queryClient = useQueryClient();
-  const { user } = useAuth();
+  const { user, setLoading } = useAuth();
   const query = useLoaderData();
   const {
     _id,
@@ -51,18 +52,23 @@ const MyQueriesCardDetails = () => {
     const queryId = _id;
     const recommendation_title = form.recommendation_title.value;
     const recommended_product_name = form.recommended_product_name.value;
-    const recommended_product_image = form.recommended_product_image.value;
+    // const recommended_product_image = form.recommended_product_image.value;
     const recommendation_reason = form.recommendation_reason.value;
     const recommender_email = user?.email;
     const recommender_name = user?.displayName;
     const recommender_photo = user?.photoURL;
     const recommender_time = new Date();
+    const recommended_product_image = form.image.files[0];
+
+    //1. Upload image and get image url
+    const image_url = await imageUpload(recommended_product_image);
+    console.log("comments:", image_url);
 
     const recommender = {
       queryId,
       recommendation_title,
       recommended_product_name,
-      recommended_product_image,
+      recommended_product_image: image_url,
       recommendation_reason,
       recommender_email,
       recommender_name,
@@ -74,9 +80,12 @@ const MyQueriesCardDetails = () => {
     };
 
     try {
+      setLoading(true);
+
       await mutateAsync(recommender);
       form.reset();
     } catch (error) {
+      setLoading(false);
       toast.error(error.message);
     }
   };
@@ -224,18 +233,23 @@ const MyQueriesCardDetails = () => {
               </div>
             </div>
 
-            {/* recommended_product_image */}
             <div className="mt-4">
-              <label className="text-gray-700 text-sm md:text-base">
+              <label
+                htmlFor="image"
+                className="text-gray-700 text-sm md:text-base"
+              >
                 Recommended Product Image
               </label>
               <input
-                type="text"
-                name="recommended_product_image"
                 required
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                type="file"
+                id="image"
+                name="image"
+                accept="image/*"
+                className="flex items-center px-3 py-1.5 mx-auto bg-white border-2 border-dashed rounded-lg cursor-pointer  file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:cursor-pointer w-full mt-2"
               />
             </div>
+
             {/* recommendation_reason */}
             <div className="mt-6">
               <label className="text-gray-700 text-sm md:text-base">
@@ -267,5 +281,3 @@ const MyQueriesCardDetails = () => {
 };
 
 export default MyQueriesCardDetails;
-
-// h-[200px] w-full overflow-y-scroll overflow-x-hidden scroll-my-2
