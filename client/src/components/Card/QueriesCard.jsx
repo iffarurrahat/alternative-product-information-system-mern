@@ -1,6 +1,8 @@
-import { MdDateRange } from "react-icons/md";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { MdDateRange } from "react-icons/md";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
+
 const QueriesCard = ({ query }) => {
   const {
     _id,
@@ -45,8 +47,8 @@ const QueriesCard = ({ query }) => {
         </p>
       </div>
       <Link to={`/query/${_id}`}>
-        <button className="text-xs font-medium text-green-600 bg-green-200/50 px-3 py-1 rounded-full mt-3">
-          Recommend Button
+        <button className="text-xs font-medium text-green-600 bg-green-200/50 px-3 py-1 rounded-full mt-3 flex items-center gap-1">
+          Recommend <MdOutlineArrowRightAlt size={18} />
         </button>
       </Link>
     </div>

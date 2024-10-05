@@ -110,19 +110,18 @@ const RecommendationsForMe = () => {
                               ).toLocaleDateString()}
                             </td>
 
-                            <td
-                              className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap tooltip"
-                              data-tip={item.recommended_product_name}
-                            >
-                              {item?.recommendation_title.substring(0, 20)}
-                              ...
+                            <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                              <p
+                                className="tooltip"
+                                data-tip={item.recommended_product_name}
+                              >
+                                {item?.recommendation_title.substring(0, 20)}
+                                ...
+                              </p>
                             </td>
                             <td className="px-4 py-4 text-sm whitespace-nowrap">
                               <div className="flex items-center gap-x-2">
-                                <div
-                                  className="px-3 py-1 rounded-full text-blue-500 bg-blue-100/60
-                           text-xs"
-                                >
+                                <div className="px-3 py-1 rounded-full text-blue-500 bg-blue-100/60 text-xs">
                                   <p
                                     className="tooltip"
                                     data-tip={item.recommended_product_name}

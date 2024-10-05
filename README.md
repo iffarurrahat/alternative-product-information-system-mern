@@ -6,7 +6,16 @@
 
 ## Task Submission (Wave 2)
 
-```bash
+````mjs
+// Function: 1
+যখন আমি Add Query বা Add Recommendation অথবা Update Query - Button এ Click করার পর
+যতক্ষণ পর্যন্ত Loading true থাকবে ততক্ষণ পর্যন্ত react-hot-toast এর মাধ্যমে Loading toast দেখাবে l
+Loading যদি false হয়ে যায় তাহলে আমি Add Query বা Add Recommendation অথবা Update Query Successful message এর toast দেখাবে l
+খুবই সুন্দর এবং tricky functionality react-hot-toast এই জিনিসটা করা হয়েছে l
+
+
+
+// Function: 2
 11 No Assignment Requirement এর মধ্যে কোথাও ছিল না যে Upload Image functionality system এর কথা,
 imgbb তে ছবি আপলোড করে ওইখান থেকে direact link copy করে এনে input field এর মধ্যে বসাতে হতো l
 
@@ -41,3 +50,4 @@ imgbb তে ছবি আপলোড করে ওইখান থেকে di
 ## 🖊️ Using FontFamily:
 
 - Google font: "Roboto, sans-serif"
+````

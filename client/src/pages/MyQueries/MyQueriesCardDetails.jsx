@@ -13,7 +13,7 @@ import { imageUpload } from "../../components/ui";
 
 const MyQueriesCardDetails = () => {
   const queryClient = useQueryClient();
-  const { user, setLoading } = useAuth();
+  const { user, loading, setLoading } = useAuth();
   const query = useLoaderData();
   const {
     _id,
@@ -29,16 +29,19 @@ const MyQueriesCardDetails = () => {
   // useMutation for handling recommendations
   const { mutateAsync } = useMutation({
     mutationFn: async (recommender) => {
+      const toastId = toast.loading("Loading...");
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/recommendation`,
         recommender
       );
+      toast.dismiss(toastId);
       return data;
     },
 
     onSuccess: () => {
       toast.success("Recommendation Successfully!");
       queryClient.invalidateQueries({ queryKey: ["recommendations", _id] });
+      setLoading(false);
     },
   });
 
@@ -79,7 +82,6 @@ const MyQueriesCardDetails = () => {
 
     try {
       setLoading(true);
-
       await mutateAsync(recommender);
       form.reset();
     } catch (error) {
@@ -172,7 +174,7 @@ const MyQueriesCardDetails = () => {
             <div className="collapse collapse-plus bg-base-200/30 shadow p-2 sm:p-3 md:p-4">
               <input type="checkbox" />
               <div className="collapse-title text-xs sm:text-sm  md:text-base font-medium">
-                All Recommendations you can see and read,{" "}
+                All recommendations you can see and read,{" "}
                 <strong>comments {recommendations.length}</strong>
               </div>
               <div className="collapse-content">
@@ -265,6 +267,7 @@ const MyQueriesCardDetails = () => {
 
             <div className=" mt-6">
               <button
+                disabled={loading}
                 type="submit"
                 className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 text-sm md:text-base"
               >
