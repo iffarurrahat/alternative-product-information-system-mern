@@ -9,6 +9,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import axios from "axios";
 import Spinner from "../../components/ui/Spinner";
+import { ImSpinner2 } from "react-icons/im";
 
 const Login = () => {
   const {
@@ -68,6 +69,10 @@ const Login = () => {
         errMessage === "Firebase: Error (auth/network-request-failed)."
       ) {
         setLoginError("Please connect your internet");
+      } else if (errMessage === "Firebase: Error (auth/invalid-email).") {
+        setLoginError("Please type your email / password");
+      } else if (errMessage === "Firebase: Error (auth/missing-password).") {
+        setLoginError("Your password is missing");
       } else {
         setLoginError(error.message);
       }
@@ -235,14 +240,20 @@ const Login = () => {
               </div>
             </div>
             <div className="mt-5">
-              <input
+              <button
+                disabled={loading}
                 type="submit"
                 className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50 cursor-pointer"
-                value="Sign in"
-              />
+              >
+                {loading ? (
+                  <ImSpinner2 className="animate-spin m-auto" />
+                ) : (
+                  "Sign in"
+                )}
+              </button>
             </div>
             {loginError && (
-              <p className="text-red-600 mt-1 text-sm flex items-center gap-1">
+              <p className="text-red-600 mt-1.5 text-sm flex items-center gap-1">
                 <RiErrorWarningFill />
                 {loginError}
               </p>
@@ -258,21 +269,27 @@ const Login = () => {
           </div>
           <div className="flex justify-center space-x-4">
             <button aria-label="Log in with Google" className="p-3 rounded-sm">
-              <FaGoogle onClick={handleLoginWithGoogle} className="text-xl" />
+              <FaGoogle
+                onClick={handleLoginWithGoogle}
+                className="text-xl hover:scale-125 hover:text-primary transition-all"
+              />
             </button>
             <button aria-label="Log in with Twitter" className="p-3 rounded-sm">
               <FaXTwitter
                 onClick={handleLoginWithTwitter}
-                className="text-xl"
+                className="text-xl hover:scale-125 hover:text-primary transition-all"
               />
             </button>
             <button aria-label="Log in with GitHub" className="p-3 rounded-sm">
-              <FaGithub onClick={handleLoginWithGithub} className="text-xl" />
+              <FaGithub
+                onClick={handleLoginWithGithub}
+                className="text-xl hover:scale-125 hover:text-primary transition-all"
+              />
             </button>
           </div>
-          <p className="text-xs text-center sm:px-6 dark:text-gray-600">
+          <p className="text-xs text-center sm:px-6 text-gray-600">
             Do not have an account?{" "}
-            <Link to="/register" className="underline dark:text-gray-800">
+            <Link to="/register" className="underline text-primary font-medium">
               Sign up
             </Link>
           </p>

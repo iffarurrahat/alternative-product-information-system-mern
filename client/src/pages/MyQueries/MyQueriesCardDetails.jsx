@@ -52,7 +52,6 @@ const MyQueriesCardDetails = () => {
     const queryId = _id;
     const recommendation_title = form.recommendation_title.value;
     const recommended_product_name = form.recommended_product_name.value;
-    // const recommended_product_image = form.recommended_product_image.value;
     const recommendation_reason = form.recommendation_reason.value;
     const recommender_email = user?.email;
     const recommender_name = user?.displayName;
@@ -60,9 +59,8 @@ const MyQueriesCardDetails = () => {
     const recommender_time = new Date();
     const recommended_product_image = form.image.files[0];
 
-    //1. Upload image and get image url
+    //Upload image and get image url
     const image_url = await imageUpload(recommended_product_image);
-    console.log("comments:", image_url);
 
     const recommender = {
       queryId,

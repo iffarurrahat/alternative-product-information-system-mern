@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import addImg from "../../assets/addEmptyImg.jpg";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 const EmptyStateMain = ({ title, pathname, btn, route }) => {
   return (
@@ -18,8 +19,9 @@ const EmptyStateMain = ({ title, pathname, btn, route }) => {
           </h2>
           {route ? (
             <Link to={`${route}`}>
-              <button className="bg-primary text-white px-3 py-2 rounded mt-2 text-xs">
+              <button className="bg-primary text-white px-3 py-2 rounded mt-2 text-xs flex items-center gap-1 mx-auto">
                 {btn}
+                <IoMdAddCircleOutline />
               </button>
             </Link>
           ) : (

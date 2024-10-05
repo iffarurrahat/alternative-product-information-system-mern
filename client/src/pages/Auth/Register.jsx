@@ -8,6 +8,7 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import axios from "axios";
 import Spinner from "../../components/ui/Spinner";
 import { imageUpload } from "../../components/ui";
+import { ImSpinner2 } from "react-icons/im";
 
 const Register = () => {
   const { createUser, updatedUserProfile, user, setUser, loading, setLoading } =
@@ -116,6 +117,7 @@ const Register = () => {
                   Name
                 </label>
                 <input
+                  required
                   type="text"
                   name="name"
                   placeholder="Name"
@@ -127,6 +129,7 @@ const Register = () => {
                   Email address
                 </label>
                 <input
+                  required
                   type="email"
                   name="email"
                   id="email"
@@ -141,6 +144,7 @@ const Register = () => {
                   </label>
                 </div>
                 <input
+                  required
                   type={showPassword ? "text" : "password"}
                   name="password"
                   id="password"
@@ -170,11 +174,17 @@ const Register = () => {
               </div>
             </div>
             <div className="mt-5">
-              <input
+              <button
+                disabled={loading}
                 type="submit"
                 className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50 cursor-pointer"
-                value="Sign up"
-              />
+              >
+                {loading ? (
+                  <ImSpinner2 className="animate-spin m-auto" />
+                ) : (
+                  "Sign up"
+                )}
+              </button>
             </div>
             {registerError && (
               <p className="text-red-600 text-xs flex items-center gap-1">
@@ -183,9 +193,9 @@ const Register = () => {
               </p>
             )}
           </form>
-          <p className="text-xs text-center sm:px-6 dark:text-gray-600">
+          <p className="text-xs text-center sm:px-6">
             Already have an account?{" "}
-            <Link to="/login" className="underline dark:text-gray-800">
+            <Link to="/login" className="underline text-primary font-medium">
               Sign in
             </Link>
           </p>

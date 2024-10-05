@@ -5,11 +5,27 @@ const Spinner = () => {
   const loadingBarRef = useRef(null);
 
   useEffect(() => {
-    loadingBarRef.current.continuousStart();
+    // Create a delay to ensure that the loadingBarRef is initialized
+    const startLoading = setTimeout(() => {
+      if (loadingBarRef.current) {
+        loadingBarRef.current.continuousStart();
 
-    setTimeout(() => {
-      loadingBarRef.current.complete();
-    }, 2000);
+        // Simulating loading completion after 2 seconds
+        setTimeout(() => {
+          if (loadingBarRef.current) {
+            loadingBarRef.current.complete();
+          }
+        }, 2000);
+      }
+    }, 0); // Small timeout ensures loadingBarRef is defined
+
+    // Cleanup function to stop loading if component is unmounted
+    return () => {
+      if (loadingBarRef.current) {
+        loadingBarRef.current.complete();
+      }
+      clearTimeout(startLoading); // Clear the timeout to prevent errors
+    };
   }, []);
 
   return (
