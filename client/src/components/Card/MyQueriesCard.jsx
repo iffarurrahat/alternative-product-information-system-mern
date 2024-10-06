@@ -17,7 +17,7 @@ const MyQueriesCard = ({ query, handleQueryDelete }) => {
       <img
         src={image_URL}
         alt="card image"
-        className="rounded-md mb-1 md:mb-2 md:h-52 w-full"
+        className="rounded-md mb-1 md:mb-2 md:h-52 w-full object-cover"
       />
       <div className="flex items-center justify-between">
         <span className="text-xs font-light">

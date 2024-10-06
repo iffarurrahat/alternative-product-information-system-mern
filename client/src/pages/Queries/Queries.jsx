@@ -37,11 +37,48 @@ const Queries = () => {
     getData();
   }, [search]);
 
-  const numberOfPages = Math.ceil(count / itemsPerPage);
-  const pages = [...Array(numberOfPages).keys()].map((element) => element + 1);
+  const numberOfPage = Math.ceil(count / itemsPerPage);
+
+  // Generate the pagination range with ellipsis
+  const getPaginationRange = () => {
+    const range = [];
+    const totalPagesToShow = 3;
+
+    if (numberOfPage <= totalPagesToShow) {
+      // If total pages are less than or equal to the pages to show, just show all pages
+      for (let i = 1; i <= numberOfPage; i++) {
+        range.push(i);
+      }
+    } else {
+      let startPage = Math.max(
+        1,
+        currentPage - Math.floor(totalPagesToShow / 2)
+      );
+      let endPage = startPage + totalPagesToShow - 1;
+
+      if (endPage > numberOfPage) {
+        endPage = numberOfPage;
+        startPage = Math.max(1, endPage - totalPagesToShow + 1);
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        range.push(i);
+      }
+
+      if (endPage < numberOfPage) {
+        range.push("...");
+        range.push(numberOfPage);
+      }
+    }
+
+    return range;
+  };
+
+  const paginationRange = getPaginationRange();
 
   //handle pagination button
   const handlePaginationButton = (value) => {
+    if (value === "...") return; // Ignore ellipsis clicks
     setCurrentPage(value);
   };
 
@@ -158,7 +195,7 @@ const Queries = () => {
             </button>
 
             {/* Numbers */}
-            {pages.map((btnNum) => (
+            {paginationRange.map((btnNum) => (
               <button
                 onClick={() => handlePaginationButton(btnNum)}
                 key={btnNum}
@@ -172,7 +209,7 @@ const Queries = () => {
 
             {/* Next Button */}
             <button
-              disabled={currentPage === numberOfPages}
+              disabled={currentPage === numberOfPage}
               onClick={() => handlePaginationButton(currentPage + 1)}
               className="px-2 md:px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-primary disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500"
             >
