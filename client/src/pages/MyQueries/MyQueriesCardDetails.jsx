@@ -171,15 +171,15 @@ const MyQueriesCardDetails = () => {
         <div className="mb-10 md:mb-16">
           <div className="space-y-3 w-full md:w-3/4 mx-auto">
             {/* collapse-1 */}
-            <div className="collapse collapse-plus bg-base-200/30 shadow p-2 sm:p-3 md:p-4">
+            <div className="collapse collapse-plus bg-base-200/30 shadow p-2 sm:p-3 md:p-4 border border-secondary/10">
               <input type="checkbox" />
-              <div className="collapse-title text-xs sm:text-sm  md:text-base font-medium">
+              <div className="collapse-title text-xs sm:text-sm md:text-base font-medium">
                 All recommendations you can see and read,{" "}
                 <strong>comments {recommendations.length}</strong>
               </div>
               <div className="collapse-content">
                 {recommendations.length > 0 ? (
-                  <div className="h-60 lg:h-h-80 place-items-center border p-2 rounded-lg scrollbar-thin scrollbar-webkit overflow-y-scroll overflow-x-hidden space-y-3">
+                  <div className="h-60 lg:h-h-80 place-items-center border border-secondary/10 p-2 rounded-lg scrollbar-thin scrollbar-webkit overflow-y-scroll overflow-x-hidden space-y-3">
                     {recommendations.map((comment) => (
                       <Comments key={comment._id} comment={comment} />
                     ))}
@@ -201,8 +201,8 @@ const MyQueriesCardDetails = () => {
         </div>
 
         {/* query_details */}
-        <section className="max-w-4xl p-4 md:p-6 mx-auto bg-white rounded-md shadow-md mb-5 md:mb-10 lg:mb-16">
-          <h2 className="text-base md:text-lg font-semibold text-gray-700 capitalize ">
+        <section className="max-w-4xl p-4 md:p-6 mx-auto border border-secondary/10 rounded-md shadow-md mb-5 md:mb-10 lg:mb-16">
+          <h2 className="text-base md:text-lg font-semibold capitalize ">
             Add A Recommendation 😀
           </h2>
 
@@ -210,34 +210,31 @@ const MyQueriesCardDetails = () => {
             <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
               {/* recommendation_title, recommended_product_name */}
               <div>
-                <label className="text-gray-700 text-sm md:text-base">
+                <label className="text-sm md:text-base">
                   Recommendation Title
                 </label>
                 <input
                   type="text"
                   name="recommendation_title"
                   required
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                  className="block w-full px-4 py-2 mt-2 border rounded-md border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                 />
               </div>
               <div>
-                <label className="text-gray-700 text-sm md:text-base">
+                <label className="text-sm md:text-base">
                   Recommended Product Name
                 </label>
                 <input
                   type="text"
                   name="recommended_product_name"
                   required
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                  className="block w-full px-4 py-2 mt-2 border rounded-md border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                 />
               </div>
             </div>
 
             <div className="mt-4">
-              <label
-                htmlFor="image"
-                className="text-gray-700 text-sm md:text-base"
-              >
+              <label htmlFor="image" className="text-sm md:text-base">
                 Recommended Product Image
               </label>
               <input
@@ -246,13 +243,13 @@ const MyQueriesCardDetails = () => {
                 id="image"
                 name="image"
                 accept="image/*"
-                className="flex items-center px-3 py-1.5 mx-auto bg-white border-2 border-dashed rounded-lg cursor-pointer  file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:cursor-pointer w-full mt-2"
+                className="flex items-center px-3 py-1.5 mx-auto border-2 border-dashed rounded-lg cursor-pointer file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:cursor-pointer w-full mt-2"
               />
             </div>
 
             {/* recommendation_reason */}
             <div className="mt-6">
-              <label className="text-gray-700 text-sm md:text-base">
+              <label className="text-sm md:text-base">
                 Recommendation Reason
               </label>
               <textarea
@@ -261,7 +258,7 @@ const MyQueriesCardDetails = () => {
                 required
                 cols="30"
                 rows="5"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2 border rounded-md border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               ></textarea>
             </div>
 

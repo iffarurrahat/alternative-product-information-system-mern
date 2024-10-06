@@ -86,11 +86,9 @@ const MyRecommendations = () => {
       <Container>
         <section className="container px-4 mx-auto pt-12 my-10">
           <div className="flex items-center gap-x-3">
-            <h2 className="text-lg font-medium text-gray-800 ">
-              My Recommendations
-            </h2>
+            <h2 className="text-lg font-medium">My Recommendations</h2>
 
-            <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">
+            <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">
               {myRecommendations.length} comments
             </span>
           </div>
@@ -99,9 +97,9 @@ const MyRecommendations = () => {
             <div className="flex flex-col mt-6">
               <div className="-mx-4 -my-2 overflow-x-auto scrollbar-thin scrollbar-webkit sm:-mx-6 lg:-mx-8">
                 <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                  <div className="overflow-hidden border border-gray-200  md:rounded-lg">
-                    <table className="min-w-full divide-y divide-gray-200">
-                      <thead className="bg-gray-50">
+                  <div className="overflow-hidden border border-secondary/10  md:rounded-lg">
+                    <table className="min-w-full divide-y divide-secondary/10">
+                      <thead>
                         <tr>
                           <th
                             scope="col"
@@ -145,7 +143,7 @@ const MyRecommendations = () => {
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="bg-white divide-y divide-gray-200 ">
+                      <tbody className="divide-y divide-secondary/10">
                         {myRecommendations.map((item) => (
                           <tr key={item._id}>
                             <td className="px-4 py-4 whitespace-nowrap">
@@ -178,10 +176,7 @@ const MyRecommendations = () => {
                             </td>
                             <td className="px-4 py-4 text-sm whitespace-nowrap">
                               <div className="flex items-center gap-x-2">
-                                <div
-                                  className="px-3 py-1 rounded-full text-blue-500 bg-blue-100/60
-                             text-xs"
-                                >
+                                <div className="px-3 py-1 rounded-full text-blue-500 bg-blue-100 text-xs">
                                   <p
                                     className="tooltip"
                                     data-tip={item.recommendation_title}

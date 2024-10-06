@@ -32,7 +32,9 @@ const RecentQueries = () => {
             className="flex align-middle gap-3 text-xs font-semibold text-[#9a9a9a]"
             data-aos="fade-left"
           >
-            <span className="border-r-2 pr-3">For Knowledge</span>
+            <span className="border-r-2 border-[#9a9a9a] pr-3">
+              For Knowledge
+            </span>
             <span>Hub</span>
           </p>
         </div>

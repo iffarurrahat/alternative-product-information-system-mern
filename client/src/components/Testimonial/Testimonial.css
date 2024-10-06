@@ -11,6 +11,7 @@
   border-radius: 50%;
   transform: scale(2);
   transition: transform 0.5s;
+  box-shadow: 2px 3px 3px 1px;
 }
 
 .swiper-slide-active .thumbnail img {

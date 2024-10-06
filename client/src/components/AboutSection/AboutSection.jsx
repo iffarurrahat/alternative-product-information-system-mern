@@ -26,8 +26,8 @@ const AboutSection = () => {
               accuracy, efficiency, and a competitive edge through data-driven
               strategies and industry best practices.
             </p>
-            <div className="flex items-center gap-5 rounded px-5 py-8 border-2 border-primary">
-              <MdOutlinePeopleAlt className="text-4xl text-primary w-1/5" />
+            <div className="flex items-center gap-5 rounded px-2.5 md:px-5 py-4 md:py-8 border-2 border-primary">
+              <MdOutlinePeopleAlt className="text-4xl text-primary w-24 md:w-20" />
               <div>
                 <h5 className="text-primary font-medium md:font-bold mb-0.5">
                   Professional Consultants

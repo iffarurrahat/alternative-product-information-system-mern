@@ -90,8 +90,8 @@ const MyQueriesUpdate = () => {
       <EmptyState title="Update My Queries" image={img} />
       <Container>
         <div className="my-10 sm:my-12 md:my-16 lg:my-20">
-          <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md ">
-            <h2 className="text-lg font-semibold text-gray-700 capitalize ">
+          <section className="max-w-4xl p-6 mx-auto rounded-md shadow-md border border-secondary/10">
+            <h2 className="text-lg font-semibold capitalize">
               Updated Your queries form 😀
             </h2>
 
@@ -99,42 +99,39 @@ const MyQueriesUpdate = () => {
               <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                 {/* product_name, product_brand */}
                 <div>
-                  <label className="text-gray-700">Product Name</label>
+                  <label>Product Name</label>
                   <input
                     type="text"
                     name="product_name"
                     defaultValue={product_name}
                     required
-                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                    className="block w-full px-4 py-2 mt-2 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                   />
                 </div>
                 <div>
-                  <label className="text-gray-700">Product Brand</label>
+                  <label>Product Brand</label>
                   <input
                     type="text"
                     name="product_brand"
                     defaultValue={product_brand}
                     required
-                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                    className="block w-full px-4 py-2 mt-2 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                   />
                 </div>
 
                 {/* Image-URL, query_title */}
                 <div>
-                  <label className="text-gray-700">Query Title</label>
+                  <label>Query Title</label>
                   <input
                     type="text"
                     name="query_title"
                     defaultValue={query_title}
                     required
-                    className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                    className="block w-full px-4 py-2 mt-2 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="image"
-                    className="text-gray-700 text-sm md:text-base"
-                  >
+                  <label htmlFor="image" className="text-sm md:text-base">
                     Product Updated Image
                   </label>
                   <input
@@ -142,15 +139,13 @@ const MyQueriesUpdate = () => {
                     id="image"
                     name="image"
                     accept="image/*"
-                    className="flex items-center px-3 py-1.5 mx-auto bg-white border-2 border-dashed rounded-lg cursor-pointer  file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:cursor-pointer w-full mt-2"
+                    className="flex items-center px-3 py-1.5 mx-auto border-2 border-dashed rounded-lg cursor-pointer  file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:cursor-pointer w-full mt-2"
                   />
                 </div>
               </div>
               {/* Boycotting Reason Details */}
               <div className="mt-6">
-                <label className="text-gray-700">
-                  Boycotting Reason Details
-                </label>
+                <label>Boycotting Reason Details</label>
                 <textarea
                   type="text"
                   name="boycotting_reason_details"
@@ -158,7 +153,7 @@ const MyQueriesUpdate = () => {
                   required
                   cols="30"
                   rows="5"
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                  className="block w-full px-4 py-2 mt-2 border border-gray-600 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                 ></textarea>
               </div>
 

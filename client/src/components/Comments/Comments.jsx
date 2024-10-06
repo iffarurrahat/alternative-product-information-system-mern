@@ -14,9 +14,9 @@ const Comments = ({ comment }) => {
   } = comment || {};
 
   return (
-    <div>
+    <div className="shadow-sm rounded">
       {/* part one */}
-      <div className="flex justify-between items-center bg-gray-100 rounded-t-md p-3">
+      <div className="flex justify-between items-center bg-slate-100 rounded-t-md p-3">
         <div className="flex items-center text-sm text-gray-600 transition-colors duration-300 transform">
           <img
             className="flex-shrink-0 object-cover w-8 h-8 mx-1 rounded-full"
@@ -40,7 +40,7 @@ const Comments = ({ comment }) => {
       </div>
 
       {/* part two */}
-      <div className="bg-gray-100/50 p-3 rounded-b-md">
+      <div className="bg-slate-50 p-3 rounded-b-md">
         <div className="lg:flex lg:items-center">
           <img
             className="object-cover w-full md:w-1/5 h-40 md:h-full rounded-xl "
@@ -53,7 +53,7 @@ const Comments = ({ comment }) => {
               {recommendation_title}
             </span>
 
-            <p className="text-sm md:text-base font-semibold text-gray-800 my-1">
+            <p className="text-sm md:text-base text-black font-semibold my-1">
               {recommended_product_name}
             </p>
 

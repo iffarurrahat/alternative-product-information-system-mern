@@ -32,9 +32,7 @@ const RecommendationsForMe = () => {
       <Container>
         <section className="container px-4 mx-auto pt-12 my-10">
           <div className="flex items-center gap-x-3">
-            <h2 className="text-lg font-medium text-gray-800 ">
-              All Recommendations
-            </h2>
+            <h2 className="text-lg font-medium">All Recommendations</h2>
 
             <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">
               {allRecommendations.length} comments
@@ -45,9 +43,9 @@ const RecommendationsForMe = () => {
             <div className="flex flex-col mt-6">
               <div className="-mx-4 -my-2 overflow-x-auto scrollbar-thin scrollbar-webkit sm:-mx-6 lg:-mx-8">
                 <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                  <div className="overflow-hidden border border-gray-200  md:rounded-lg">
-                    <table className="min-w-full divide-y divide-gray-200">
-                      <thead className="bg-gray-50">
+                  <div className="overflow-hidden border border-secondary/10 md:rounded-lg">
+                    <table className="min-w-full divide-y divide-secondary/10">
+                      <thead>
                         <tr>
                           <th
                             scope="col"
@@ -71,27 +69,24 @@ const RecommendationsForMe = () => {
                               <span>Created Date</span>
                             </div>
                           </th>
-
                           <th
                             scope="col"
                             className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
                           >
                             <span>Query Title</span>
                           </th>
-
                           <th
                             scope="col"
                             className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
                           >
                             Product Name
                           </th>
-
                           <th className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
                             Product Image
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="bg-white divide-y divide-gray-200 ">
+                      <tbody className="divide-y divide-secondary/10 ">
                         {allRecommendations.map((item) => (
                           <tr key={item._id}>
                             <td className="px-4 py-4 whitespace-nowrap">
@@ -104,7 +99,7 @@ const RecommendationsForMe = () => {
                             <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                               <p>{item?.recommender_name}</p>
                             </td>
-                            <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                            <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                               {new Date(
                                 item.recommender_time
                               ).toLocaleDateString()}
@@ -121,7 +116,7 @@ const RecommendationsForMe = () => {
                             </td>
                             <td className="px-4 py-4 text-sm whitespace-nowrap">
                               <div className="flex items-center gap-x-2">
-                                <div className="px-3 py-1 rounded-full text-blue-500 bg-blue-100/60 text-xs">
+                                <div className="px-3 py-1 rounded-full text-blue-600 bg-blue-100 text-xs">
                                   <p
                                     className="tooltip"
                                     data-tip={item.recommended_product_name}

@@ -33,7 +33,7 @@ const HelpSection = () => {
             {/* up-text */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {/* part-1 */}
-              <div className="flex items-center gap-5 shadow rounded px-5 py-8">
+              <div className="flex items-center gap-5 shadow rounded px-5 py-8 border border-secondary/10">
                 <GiBubbles className="text-4xl text-primary" />
                 <div>
                   <h5 className="text-primary font-medium md:font-bold mb-0.5">
@@ -45,7 +45,7 @@ const HelpSection = () => {
                 </div>
               </div>
               {/* part-2 */}
-              <div className="flex items-center gap-5 shadow rounded px-5 py-8">
+              <div className="flex items-center gap-5 shadow rounded px-5 py-8 border border-secondary/10">
                 <SiParrotsecurity className="text-4xl text-primary" />
                 <div>
                   <h5 className="text-primary font-medium md:font-bold mb-0.5">
@@ -57,7 +57,7 @@ const HelpSection = () => {
                 </div>
               </div>
               {/* part-3 */}
-              <div className="flex items-center gap-5 shadow rounded px-5 py-8">
+              <div className="flex items-center gap-5 shadow rounded px-5 py-8 border border-secondary/10">
                 <FaAssistiveListeningSystems className="text-4xl text-primary" />
                 <div>
                   <h5 className="text-primary font-medium md:font-bold mb-0.5">
@@ -69,7 +69,7 @@ const HelpSection = () => {
                 </div>
               </div>
               {/* part-4 */}
-              <div className="flex items-center gap-5 shadow rounded px-5 py-8">
+              <div className="flex items-center gap-5 shadow rounded px-5 py-8 border border-secondary/10">
                 <VscSymbolInterface className="text-4xl text-primary" />
                 <div>
                   <h5 className="text-primary font-medium md:font-bold mb-0.5">

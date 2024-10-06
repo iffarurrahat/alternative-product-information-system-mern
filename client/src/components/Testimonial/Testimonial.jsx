@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import Container from "../ui/Container";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "./Testimonial.css";
+import "swiper/css/navigation";
+import Container from "../ui/Container";
+import { CgCalendarDates, CgNametag } from "react-icons/cg";
+import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import {
   HiOutlineArrowNarrowLeft,
   HiOutlineArrowNarrowRight,
@@ -44,24 +45,23 @@ const Testimonial = () => {
           modules={[Navigation, Pagination, Autoplay]}
           className="relative testimonial-slide"
         >
-          {reviews.map((review) => (
-            <SwiperSlide key={review._id}>
+          {reviews.map((review, idx) => (
+            <SwiperSlide key={idx}>
               <div className="md:flex items-center md:gap-24 py-8 sm:px-5 md:px-20 lg:px-24">
                 <div className="thumbnail mx-auto md:mx-0">
-                  <img
-                    src={review.image}
-                    alt="review image"
-                    // className="md:h-36 md:w-36"
-                  />
+                  <img src={review.image} alt="review image" />
                 </div>
                 <div className="aside relative mt-8 md:mt-16 mx-8 md:mx-0">
-                  <p className="p-1 before:content-[open-quote] before:-top-6 md:before:-top-12 text-sm sm:text-base">
+                  <p className="p-1 before:content-[open-quote] before:-top-6 md:before:-top-12 text-sm sm:text-base ">
                     {review.review}
                   </p>
-                  <h3 className="mt-4 md:mt-8 text-blue-700 font-bold text-lg md:tex-2xl">
-                    {review.name}
+                  <h3 className="mt-4 md:mt-8 text-blue-700 font-bold text-lg md:tex-2xl flex items-center gap-1">
+                    <CgNametag /> {review.name}
                   </h3>
-                  <p className="text-xs font-medium mt-0.5">{review.date}</p>
+                  <p className="text-xs font-medium mt-0.5 flex items-center gap-1.5 ml-0.5">
+                    <CgCalendarDates />
+                    {review.date}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>

@@ -14,7 +14,7 @@ const FAQ = () => {
         </div>
         <div className="space-y-3 w-full md:w-3/4 mx-auto">
           {/* collapse-1 */}
-          <div className="collapse collapse-plus bg-base-200/30 shadow p-2 md:p-3 lg:p-4">
+          <div className="collapse collapse-plus bg-base-200/30 shadow p-2 md:p-3 lg:p-4 border border-secondary/10">
             <input type="checkbox" />
             <div className="collapse-title font-semibold md:font-medium text-sm md:text-base">
               What is the purpose of the Alternative Product Information System?
@@ -30,7 +30,7 @@ const FAQ = () => {
             </div>
           </div>
           {/* collapse-2 */}
-          <div className="collapse collapse-plus bg-base-200/30 shadow p-2 md:p-3 lg:p-4">
+          <div className="collapse collapse-plus bg-base-200/30 shadow p-2 md:p-3 lg:p-4 border border-secondary/10">
             <input type="checkbox" />
             <div className="collapse-title font-semibold md:font-medium text-sm md:text-base">
               Can I purchase or rent products directly through this website?
@@ -46,7 +46,7 @@ const FAQ = () => {
             </div>
           </div>
           {/* collapse-3 */}
-          <div className="collapse collapse-plus bg-base-200/30 shadow p-2 md:p-3 lg:p-4">
+          <div className="collapse collapse-plus bg-base-200/30 shadow p-2 md:p-3 lg:p-4 border border-secondary/10">
             <input type="checkbox" />
             <div className="collapse-title font-semibold md:font-medium text-sm md:text-base">
               How is the information on this website sourced?
@@ -63,7 +63,7 @@ const FAQ = () => {
             </div>
           </div>
           {/* collapse-4 */}
-          <div className="collapse collapse-plus bg-base-200/30 shadow p-2 md:p-3 lg:p-4">
+          <div className="collapse collapse-plus bg-base-200/30 shadow p-2 md:p-3 lg:p-4 border border-secondary/10">
             <input type="checkbox" />
             <div className="collapse-title font-semibold md:font-medium text-sm md:text-base">
               Can I contribute information or suggest products to be featured?
