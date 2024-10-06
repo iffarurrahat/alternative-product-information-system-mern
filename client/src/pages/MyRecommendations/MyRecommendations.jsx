@@ -230,23 +230,6 @@ const MyRecommendations = () => {
           )}
         </section>
       </Container>
-
-      {/* Extra  */}
-      <div className="p-32">
-        <img
-          src={
-            user.photoURL
-              ? user.photoURL
-              : "https://i.ibb.co.com/FHzbGp2/default-profile.png"
-          }
-          alt=""
-        />
-        <br />
-        <h2 className="text-3xl">
-          {user.displayName ? user.displayName : "displayName none"}
-        </h2>
-        <h2 className="text-xl">{user.email ? user.email : "email none"} </h2>
-      </div>
     </>
   );
 };

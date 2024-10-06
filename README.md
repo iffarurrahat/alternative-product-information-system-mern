@@ -29,7 +29,6 @@ overflow হবে না l  কারণ হচ্ছে আমি Pagination-�
 7, 8, 9 …10,
 
 
-
 # Function: 3
 11 No Assignment Requirement এর মধ্যে কোথাও ছিল না যে Upload Image functionality system এর কথা,
 imgbb তে ছবি আপলোড করে ওইখান থেকে direact link copy করে এনে input field এর মধ্যে বসাতে হতো l
@@ -38,6 +37,9 @@ imgbb তে ছবি আপলোড করে ওইখান থেকে di
  - পাশাপাশি Add A Recommendation ওইখানেও Upload Image functionality implement করেছি
  - এবং Added Your queries Page ও Upload Image functionality implement করেছি
  - এবং Updated Your queries form ওই জায়গাতেও Upload Image functionality implement করেছি
+
+# Function: 4
+Forget password implement
 
 ```
 
