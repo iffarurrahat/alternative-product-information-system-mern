@@ -1,15 +1,15 @@
-import { MdDateRange } from "react-icons/md";
-import { useLoaderData } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
-import Container from "../../components/ui/Container";
+import axios from "axios";
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
-import axios from "axios";
+import { Helmet } from "react-helmet-async";
+import { MdDateRange } from "react-icons/md";
+import { useLoaderData } from "react-router-dom";
+import Spinner from "../../components/ui/Spinner";
+import { imageUpload } from "../../components/ui";
+import Container from "../../components/ui/Container";
 import Comments from "../../components/Comments/Comments";
 import NoDataFound from "../../components/EmptyState/NoDataFound";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import Spinner from "../../components/ui/Spinner";
-import { imageUpload } from "../../components/ui";
 
 const MyQueriesCardDetails = () => {
   const queryClient = useQueryClient();

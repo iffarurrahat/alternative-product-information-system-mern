@@ -8,7 +8,7 @@ import logoImg from "./../../assets/logo.png";
 import LoadingBar from "react-top-loading-bar";
 
 const Navbar = () => {
-  const { user, logOut } = useAuth();
+  const { user, logOut, loading } = useAuth();
 
   const [theme, setTheme] = useState("light");
   const [navbarBackgroundColor, setNavbarBackgroundColor] = useState("");
@@ -178,10 +178,14 @@ const Navbar = () => {
       <LoadingBar color="#4a00ff" ref={loadingBarRef} style={{ top: "0px" }} />
 
       <header
-        className={`${navbarBackgroundColor} absolute top-0 left-0 right-0 z-50 `}
+        className={`
+          ${navbarBackgroundColor} 
+          ${
+            loading && "text-black shadow"
+          } absolute top-0 left-0 right-0 z-50 `}
       >
         <Container>
-          <div className="navbar lg:flex justify-between px-0 ">
+          <div className="navbar lg:flex justify-between px-0">
             <div>
               <Link to="/">
                 <img src={logoImg} alt="logo" className="h-10 md:h-12 " />

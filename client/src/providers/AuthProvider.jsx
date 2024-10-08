@@ -11,6 +11,7 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import axios from "axios";
@@ -75,6 +76,12 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  // reset password
+  const resetPassword = (email) => {
+    setLoading(true);
+    return sendPasswordResetEmail(auth, email);
+  };
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -92,6 +99,7 @@ const AuthProvider = ({ children }) => {
     updatedUserProfile,
     userLogin,
     logOut,
+    resetPassword,
     loginWithGoogle,
     loginWithGithub,
     loginWithTwitter,

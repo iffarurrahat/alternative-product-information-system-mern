@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import NoDataFound from "../../components/EmptyState/NoDataFound";
 import Swal from "sweetalert2";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { FaRegCommentDots } from "react-icons/fa";
 
 const MyRecommendations = () => {
   const { user } = useAuth();
@@ -86,10 +87,13 @@ const MyRecommendations = () => {
       <Container>
         <section className="container px-4 mx-auto pt-12 my-10">
           <div className="flex items-center gap-x-3">
-            <h2 className="text-lg font-medium">My Recommendations</h2>
+            <h2 className="sm:text-lg font-medium whitespace-nowrap">
+              My Recommendations
+            </h2>
 
-            <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">
+            <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full flex items-center gap-1 whitespace-nowrap">
               {myRecommendations.length} comments
+              <FaRegCommentDots size={10} />
             </span>
           </div>
 
@@ -126,7 +130,7 @@ const MyRecommendations = () => {
 
                           <th
                             scope="col"
-                            className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
+                            className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 whitespace-nowrap"
                           >
                             <span>Created Date</span>
                           </th>
@@ -186,7 +190,7 @@ const MyRecommendations = () => {
                                 </div>
                               </div>
                             </td>
-                            <td className="px-4 py-4 text-sm whitespace-nowrap ml-3">
+                            <td className="px-4 py-4 text-sm whitespace-nowrap text-center">
                               <button
                                 onClick={() => handleDelete(item._id)}
                                 className="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none"

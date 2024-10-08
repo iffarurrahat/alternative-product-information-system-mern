@@ -13,16 +13,21 @@ const Footer = () => {
           </Link>
         </div>
         <ul className="flex flex-wrap justify-center gap-5 text-[#ffffff99] text-sm md:text-base">
-          <Link to="#">Home</Link>
-          <Link to="#">Queries</Link>
-          <Link to="#">Recommendations For Me</Link>
-          <Link to="#">My Queries</Link>
-          <Link to="#">My Recommendations</Link>
+          <Link to="/">Home</Link>
+          <Link to="/queries">Queries</Link>
+          <Link to="/recommendations-for-me">Recommendations For Me</Link>
+          <Link to="/my-queries">My Queries</Link>
+          <Link to="/my-recommendations">My Recommendations</Link>
         </ul>
         <div className="flex justify-center gap-3 mt-8">
-          <p className="border border-primary p-2 rounded-full cursor-pointer">
-            <FaFacebook className="text-primary text-lg md:text-xl" />
-          </p>
+          <Link
+            to="https://react-icons.github.io/react-icons/search/#q=search"
+            target="_blank"
+          >
+            <p className="border border-primary p-2 rounded-full cursor-pointer">
+              <FaFacebook className="text-primary text-lg md:text-xl" />
+            </p>
+          </Link>
           <p className="border border-primary p-2 rounded-full cursor-pointer">
             <FaTwitter className="text-primary text-lg md:text-xl" />
           </p>

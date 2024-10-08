@@ -10,9 +10,9 @@ const port = process.env.PORT || 5000;
 // middleware
 const corsOptions = {
   origin: [
-    // "http://localhost:5173",
-    "https://alternative-product-info-b80e6.web.app",
-    "https://alternative-product-info-b80e6.firebaseapp.com",
+    "http://localhost:5173",
+    // "https://alternative-product-info-b80e6.web.app",
+    // "https://alternative-product-info-b80e6.firebaseapp.com",
   ],
   credentials: true,
   optionSuccessStatus: 200,
@@ -151,10 +151,24 @@ async function run() {
     });
 
     //<-!----Recommendation PART-->
-    //Get all recommend data from db
+    //Get all recommend data from db and pagination
+    // <-!  Recommendation For Me Page  ->
     app.get("/recommendation", async (req, res) => {
-      const result = await recommendationCollections.find().toArray();
+      const size = parseInt(req.query.size);
+      const page = parseInt(req.query.page) - 1;
+
+      const result = await recommendationCollections
+        .find()
+        .skip(page * size)
+        .limit(size)
+        .toArray();
       res.send(result);
+    });
+
+    //Get all recommend data count from db for pagination
+    app.get("/recommendation-count", async (req, res) => {
+      const count = await recommendationCollections.countDocuments();
+      res.send({ count });
     });
 
     // Get recommendations by queryId
@@ -214,7 +228,7 @@ async function run() {
       res.send(result);
     });
 
-    //Get all queries data from db for pagination
+    //Get all queries data from db for pagination <-!  Queries Page  ->
     app.get("/all-queries", async (req, res) => {
       const size = parseInt(req.query.size);
       const page = parseInt(req.query.page) - 1;

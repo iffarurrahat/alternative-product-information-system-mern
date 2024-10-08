@@ -13,11 +13,11 @@ const MyQueriesCard = ({ query, handleQueryDelete }) => {
   } = query || {};
 
   return (
-    <div className="w-full max-w-sm px-4 py-3 rounded-md shadow-md hover:scale-[1.05] transition-all border border-secondary/10">
+    <div className="w-full max-w-sm p-3 rounded-md shadow-md hover:scale-[1.05] transition-all border border-secondary/10">
       <img
         src={image_URL}
         alt="card image"
-        className="rounded-md mb-1 md:mb-2 md:h-52 w-full object-cover"
+        className="rounded-md mb-1 md:mb-2 h-48 md:h-52 w-full object-cover"
       />
       <div className="flex items-center justify-between">
         <span className="text-xs font-light">

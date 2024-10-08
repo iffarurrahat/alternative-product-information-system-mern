@@ -13,7 +13,7 @@ const EmptyStateMain = ({ title, pathname, btn, route }) => {
       />
       <div className="absolute inset-0 bg-black opacity-40 pointer-events-none"></div>
       <div className="max-w-screen-xl mx-auto text-center flex justify-center">
-        <div className="absolute top-1/3 md:top-1/2">
+        <div className="absolute top-[40%] sm:top-1/3 md:top-1/2">
           <h2 className="text-2xl md:text-4x text-white font-bold text-center">
             {title}
           </h2>
@@ -30,7 +30,7 @@ const EmptyStateMain = ({ title, pathname, btn, route }) => {
         </div>
 
         <div className="flex justify-center text-center mx-auto">
-          <p className="absolute bottom-0 bg-primary text-white py-3 px-5">
+          <p className="absolute bottom-0 bg-primary text-white py-2 sm:py-2.5 md:py-3 px-2 sm:px-4 md:px-5 text-xs sm:text-sm md:text-base">
             <Link to="/">Home</Link> <span>{pathname}</span>
           </p>
         </div>

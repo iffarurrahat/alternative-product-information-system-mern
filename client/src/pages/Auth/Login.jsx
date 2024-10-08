@@ -20,9 +20,11 @@ const Login = () => {
     user,
     loading,
     setLoading,
+    resetPassword,
   } = useAuth();
   const [loginError, setLoginError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
 
   //when user login navigate the path
   const navigate = useNavigate();
@@ -76,6 +78,20 @@ const Login = () => {
       } else {
         setLoginError(error.message);
       }
+    }
+  };
+
+  // reset password
+  const handleResetPassword = async () => {
+    if (!email) return toast.error("Please write your email first!");
+
+    try {
+      await resetPassword(email);
+      toast.success("Request Success! Check you email for further process...");
+      setLoading(false);
+    } catch (err) {
+      toast.error(err.message);
+      setLoading(false);
     }
   };
 
@@ -210,6 +226,7 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
+                  onBlur={(e) => setEmail(e.target.value)}
                   id="email"
                   placeholder="Email"
                   className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
@@ -230,13 +247,10 @@ const Login = () => {
                 />
                 <span
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0  flex items-center pr-3 cursor-pointer"
+                  className="absolute inset-y-0 top-4 right-0 flex items-center pr-3 cursor-pointer"
                 >
                   {showPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
                 </span>
-                <a className="text-xs hover:underline dark:text-gray-600">
-                  Forgot password?
-                </a>
               </div>
             </div>
             <div className="mt-5">
@@ -259,13 +273,18 @@ const Login = () => {
               </p>
             )}
           </form>
-
+          <button
+            onClick={handleResetPassword}
+            className="text-xs hover:underline text-gray-600"
+          >
+            Forgot password?
+          </button>
           <div className="flex items-center pt-4 space-x-1">
-            <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
-            <p className="px-3 text-sm dark:text-gray-600">
+            <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
+            <p className="px-3 text-sm text-gray-600">
               Login with social accounts
             </p>
-            <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+            <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
           </div>
           <div className="flex justify-center space-x-4">
             <button aria-label="Log in with Google" className="p-3 rounded-sm">

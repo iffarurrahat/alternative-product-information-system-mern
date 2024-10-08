@@ -16,7 +16,7 @@ const Comments = ({ comment }) => {
   return (
     <div className="shadow-sm rounded">
       {/* part one */}
-      <div className="flex justify-between items-center bg-slate-100 rounded-t-md p-3">
+      <div className="flex justify-between sm:items-center bg-slate-100 rounded-t-md p-3">
         <div className="flex items-center text-sm text-gray-600 transition-colors duration-300 transform">
           <img
             className="flex-shrink-0 object-cover w-8 h-8 mx-1 rounded-full"
@@ -24,15 +24,17 @@ const Comments = ({ comment }) => {
             alt={recommender_name}
             referrerPolicy="no-referrer"
           />
-          <div className="mx-1">
+          <div className="mx-0.5 sm:mx-1">
             <h1 className="text-xs font-semibold text-gray-700">
               {recommender_name}
             </h1>
-            <p className="text-xs text-gray-500">{recommender_email}</p>
+            <p className="text-[10px] sm:text-xs -mt-1 sm:-mt-0 text-gray-500">
+              {recommender_email}
+            </p>
           </div>
         </div>
         <p
-          className="text-xs font-semibold text-gray-700 flex items-center gap-1 tooltip tooltip-left"
+          className="text-[10px] sm:text-xs font-semibold text-gray-700 flex items-center gap-1 tooltip tooltip-left -mt-4 sm:-mt-0"
           data-tip="Comment create date"
         >
           <MdDateRange /> {new Date(recommender_time).toLocaleDateString()}
