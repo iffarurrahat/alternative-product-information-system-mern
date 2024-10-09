@@ -20,14 +20,9 @@ const Footer = () => {
           <Link to="/my-recommendations">My Recommendations</Link>
         </ul>
         <div className="flex justify-center gap-3 mt-8">
-          <Link
-            to="https://react-icons.github.io/react-icons/search/#q=search"
-            target="_blank"
-          >
-            <p className="border border-primary p-2 rounded-full cursor-pointer">
-              <FaFacebook className="text-primary text-lg md:text-xl" />
-            </p>
-          </Link>
+          <p className="border border-primary p-2 rounded-full cursor-pointer">
+            <FaFacebook className="text-primary text-lg md:text-xl" />
+          </p>
           <p className="border border-primary p-2 rounded-full cursor-pointer">
             <FaTwitter className="text-primary text-lg md:text-xl" />
           </p>
