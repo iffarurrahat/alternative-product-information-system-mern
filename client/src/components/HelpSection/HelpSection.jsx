@@ -26,7 +26,7 @@ const HelpSection = () => {
             <img
               src="https://html.rrdevs.net/techex/assets/img/home1/feature_img.jpg"
               alt="image"
-              className="mx-auto md:mx-0 h-72 sm:h-96 md:h-full"
+              className="mx-auto md:mx-0 h-72 sm:h-96 md:h-full rounded-md"
             />
           </div>
           <div className="md:w-4/6 mt-10 md:mt-0">
