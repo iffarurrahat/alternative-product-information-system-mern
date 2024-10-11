@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import Container from "../ui/Container";
 import { useEffect, useRef, useState } from "react";
 import useAuth from "../../hooks/useAuth";
@@ -14,6 +14,7 @@ const Navbar = () => {
   const [navbarBackgroundColor, setNavbarBackgroundColor] = useState("");
   const [navbarIcon, setNavbarIcon] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Added: Reference for LoadingBar
   const loadingBarRef = useRef(null);
@@ -44,6 +45,7 @@ const Navbar = () => {
     logOut()
       .then(() => {
         toast.success("Logout Successful");
+        navigate("/");
       })
       .catch((error) => {
         if (error.message) {
